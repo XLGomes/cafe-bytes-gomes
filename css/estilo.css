@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Paleta de cores do site: mude aqui e o site todo muda */
+:root {
+  --cor-fundo: #fbf6f1;
+  --cor-texto: #3b2a20;
+  --cor-cartao: #ffffff;
+  --cor-titulo: #4b2e1f;
+  --cor-cafe: #4b2e1f;
+  --cor-destaque: #d9822b;
+  --cor-suave: #f1e3d3;
+}
+
+/* Todos os elementos: medidas mais previsíveis */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--cor-titulo);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--cor-destaque);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Cabeçalho e menu */
+.topo {
+  background-color: var(--cor-cafe);
+  padding: 16px 24px;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+.menu a:hover {
+  color: var(--cor-destaque);
+}
+
+/* Cada seção vira uma caixa branca centralizada */
+.secao {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 32px;
+  background-color: var(--cor-cartao);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Botão */
+.botao {
+  display: inline-block;
+  background-color: var(--cor-destaque);
+  color: #ffffff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: var(--cor-cafe);
+}
+
+/* Tabela de horários */
+.horarios {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.horarios th,
+.horarios td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-suave);
+}
+
+/* Rodapé */
+.rodape {
+  background-color: var(--cor-cafe);
+  color: #ffffff;
+  text-align: center;
+  padding: 24px;
+}
