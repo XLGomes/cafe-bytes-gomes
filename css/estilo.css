@@ -1,3 +1,4 @@
+/* Fonte Poppins, do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* Paleta de cores do site: mude aqui e o site todo muda */
@@ -112,4 +113,213 @@ img {
   color: #ffffff;
   text-align: center;
   padding: 24px;
+}
+
+/* ===== Layout ===== */
+
+/* Cabeçalho: logo à esquerda, menu à direita, sempre visível */
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.menu {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+/* Destaque: tudo centralizado */
+.destaque {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 48px 24px;
+  background: linear-gradient(135deg, var(--cor-suave), var(--cor-fundo));
+}
+
+.destaque h1 {
+  font-size: 3rem;
+  max-width: 700px;
+  margin: 8px 0 16px;
+}
+
+/* Sobre: foto e texto lado a lado */
+.duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Cards do cardápio: grade que se ajusta sozinha */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-suave);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin: 8px 0;
+}
+
+.emoji {
+  font-size: 3rem;
+}
+
+.preco {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cor-destaque);
+}
+
+/* Telas pequenas (celular): até 700px de largura */
+@media (max-width: 700px) {
+  .topo {
+    flex-wrap: wrap;
+  }
+
+  .destaque h1 {
+    font-size: 2rem;
+  }
+
+  .duas-colunas {
+    grid-template-columns: 1fr;
+  }
+
+  .secao {
+    margin: 16px;
+    padding: 20px;
+  }
+}
+
+/* ===== Saudação e aviso de aberto/fechado ===== */
+.saudacao {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--cor-destaque);
+  margin: 0;
+}
+
+.status {
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+.aberto-agora {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.fechado-agora {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* ===== Modo escuro e menu do celular ===== */
+
+/* No modo escuro, só trocamos os valores das variáveis */
+body.escuro {
+  --cor-fundo: #1c1512;
+  --cor-texto: #f3e9e2;
+  --cor-cartao: #2a201b;
+  --cor-titulo: #f2b56b;
+  --cor-suave: #3d2f27;
+}
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.botao-tema,
+.botao-menu {
+  background: none;
+  border: 2px solid var(--cor-destaque);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+/* O botão ☰ fica escondido no computador */
+.botao-menu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .botao-menu {
+    display: block;
+  }
+
+  .botao-tema {
+    margin-left: auto;
+  }
+
+  /* No celular, o menu fica escondido até clicar no ☰ */
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    order: 3;
+  }
+
+  .menu.mostrar {
+    display: flex;
+  }
+}
+
+/* ===== Busca e filtros do cardápio ===== */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.busca {
+  flex: 1 1 220px;
+  padding: 10px 16px;
+  border: 2px solid var(--cor-suave);
+  border-radius: 999px;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.filtro {
+  padding: 8px 16px;
+  border: 2px solid var(--cor-destaque);
+  border-radius: 999px;
+  background: none;
+  color: var(--cor-texto);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.filtro.ativo {
+  background-color: var(--cor-destaque);
+  color: #ffffff;
 }
