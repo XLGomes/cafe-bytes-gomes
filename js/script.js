@@ -251,8 +251,8 @@ atualizarIconeTema();
 
 // --- API 1: clima agora (Open-Meteo)
 // Coordenadas de São Paulo. Troque pelas da sua cidade!
-const LATITUDE = -23.55;
-const LONGITUDE = -46.63;
+const LATITUDE = -18.9186;
+const LONGITUDE = -48.2772;
 const caixaClima = document.querySelector('#clima');
 
 async function carregarClima() {
